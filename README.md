@@ -66,10 +66,10 @@ Create a DataFrame that averages the “daily_returns” columns for all four as
 
 Using the average daily returns in the etf_portfolio_returns DataFrame to calculate the annualized returns for the portfolio. Display the annualized return value of the ETF portfolio.
 
-```annualized_etf_portfolio_returns =  (etf_portfolio_returns * 252)```
+```annualized_etf_portfolio_returns =  (etf_portfolio_returns.mean() * 252)```
 
 Using the average daily returns in the etf_portfolio_returns DataFrame to calculate the cumulative returns of the ETF portfolio.
-```etf_cumulative_returns = etf_portfolio_returns.cumsum()```
+```etf_cumulative_returns = (1+etf_portfolio_returns).cumprod()```
 
 Using hvPlot, an interactive line plot is created that visualizes the cumulative return values of the ETF portfolio. Reflect the “time” column of the DataFrame on the x-axis. Make sure that you professionally style and format your visualization to enhance its readability.
 
